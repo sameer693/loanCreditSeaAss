@@ -5,6 +5,9 @@ import verifierDashboardRoutes from "./routes/verifier";
 import adminDashboardRoutes from "./routes/adminDashboard";
 import dotenv from "dotenv";
 import { AppDataSource } from "./config/database";
+import cors from "cors";
+
+
 
 
 dotenv.config();
@@ -14,6 +17,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userDashboardRoutes);

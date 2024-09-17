@@ -20,7 +20,7 @@ export const registerUser = async (req: Request, res: Response) => {
 
     // Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
-
+    console.log('hit')
     const user = new User();
     user.email = email;
     user.password = hashedPassword;
