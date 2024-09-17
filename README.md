@@ -17,6 +17,7 @@ The backend is built with Node.js and TypeScript using the Express framework. It
    git clone <repository-url>
    cd <repository-directory>
    npm install
+   npm run dev
 The backend server will run on http://localhost:3000.
 # API Endpoints
 
@@ -37,3 +38,6 @@ This document describes the API endpoints for the Loan Management System.
     "role": "user" // Can be "user", "verifier", or "admin"
   }
 
+frontend react
+ ```bash
+npm run start
