@@ -1,0 +1,191 @@
+.appliedLoans {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+  }
+  
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 23px;
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .actionButtons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .actionButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4B506D;
+  }
+  
+  .actionIcon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .loanTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .loanTable th,
+  .loanTable td {
+    padding: 15px 10px;
+    text-align: left;
+    border-bottom: 1px solid #DFE0EB;
+  }
+  
+  .loanTable th {
+    font-weight: 700;
+    color: #9FA2B4;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .activityInfo {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .activityAvatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+  
+  .activityTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #252733;
+  }
+  
+  .activityTime,
+  .customerDate,
+  .activityTime {
+    font-size: 12px;
+    color: #C5C7CD;
+  }
+  
+  .customerName {
+    font-size: 14px;
+    font-weight: 600;
+    color: #252733;
+  }
+  
+  .actionColumn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .statusBadge {
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .pending {
+    background-color: #FEC400;
+    color: #fff;
+  }
+  
+  .verified {
+    background-color: #29CC97;
+    color: #fff;
+  }
+  
+  .moreButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .highlightedRow {
+    background-color: rgba(55, 81, 255, 0.04);
+  }
+  
+  .tableFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .rowsPerPage {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #9FA2B4;
+  }
+  
+  .rowsPerPage select {
+    background: none;
+    border: none;
+    color: #4B506D;
+    font-weight: 600;
+  }
+  
+  .pagination {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 14px;
+    color: #9FA2B4;
+  }
+  
+  .pagination button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .appliedLoans {
+      padding: 20px;
+    }
+  
+    .sectionHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .loanTable {
+      font-size: 12px;
+    }
+  
+    .activityInfo {
+      gap: 10px;
+    }
+  
+    .activityAvatar {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .tableFooter {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }

@@ -1,28 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './pages/login';
-import Register from './pages/register';
-import UserDashboard from './pages/userDash';
-import VerifierDashboard from './pages/verifyerDash';
-import AdminDashboard from './pages/adminDash';
-import Navbar from './components/Navbar';
-function App() {
+import styles from './components/LoanDashboard.module.css';
+import Header from './components/Headers';
+import Sidebar from './components/Sidebar';
+import DashboardSummary from './components/DashboardSummary';
+import AppliedLoans from './components/AppliedLoans';
+
+const LoanDashboard: React.FC = () => {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/user/dashboard" element={<UserDashboard />} />
-        <Route path="/verifier/dashboard" element={<VerifierDashboard />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-      </Routes>
-    </Router>
-
-    
+    <div className={styles.dashboard}>
+      <Header />
+      <main className={styles.mainContent}>
+        <Sidebar />
+        <section className={styles.contentArea}>
+          <h1 className={styles.pageTitle}>Dashboard &gt; <span className={styles.loansTitle}>Loans</span></h1>
+          <DashboardSummary />
+          <AppliedLoans />
+        </section>
+      </main>
+    </div>
   );
-}
+};
 
-export default App;
+export default LoanDashboard;

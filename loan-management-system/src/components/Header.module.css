@@ -1,0 +1,74 @@
+.header {
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 27px 14px;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .appTitle {
+    color: #0A512F;
+    font: 700 29px Roboto, sans-serif;
+  }
+  
+  .logoWrapper {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .logoImage {
+    width: 26px;
+    height: auto;
+  }
+  
+  .headerNav {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  
+  .navIcon {
+    width: 27px;
+    height: auto;
+  }
+  
+  .verifierWrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .verifierIcon {
+    width: 32px;
+    height: auto;
+  }
+  .verifierText {
+    color: #0A512F;
+    font: 700 18px Roboto, sans-serif;
+  }
+  
+  .moreOptionsIcon {
+    width: 14px;
+    height: auto;
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      padding: 6px 20px 14px;
+    }
+  
+    .logoContainer {
+      gap: 20px;
+    }
+  
+    .headerNav {
+      flex-wrap: wrap;
+    }
+  }
