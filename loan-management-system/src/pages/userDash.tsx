@@ -34,7 +34,15 @@ const UserDashboard = () => {
       });
       setLoans(response.data);
     } catch (error) {
-      alert('Failed to fetch loans');
+      if (axios.isAxiosError(error) && error.response) {
+        const { status, data } = error.response;
+        alert(`Error ${status}: ${data}`);
+      } else {
+        alert('Failed to fetch loans');
+      }
+      // alert(`Error ${status}: ${data.message}`);
+      alert(error );
+      // alert('Failed to fetch loans');
     }
   };
 

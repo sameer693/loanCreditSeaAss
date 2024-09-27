@@ -31,6 +31,7 @@ export const getUserLoans = async (req: Request, res: Response) => {
     const loans = await loanRepo.find({ where: { user } });
     res.status(200).json(loans);
   } catch (error) {
+    // res.send(res.statusCode).json({ message: "Error fetching user loans", error });
     res.status(500).json({ message: "Error fetching loan history", error });
   }
 };

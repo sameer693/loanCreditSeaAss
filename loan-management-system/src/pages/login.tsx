@@ -1,9 +1,22 @@
-import { useState } from 'react';
+import { LockOutlined } from "@mui/icons-material";
+import {
+  Container,
+  CssBaseline,
+  Box,
+  Avatar,
+  Typography,
+  TextField,
+  Button,
+  Grid,
+} from "@mui/material";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -11,35 +24,74 @@ const Login = () => {
         email,
         password,
       });
-      const token = response.data.token;
-      localStorage.setItem('token', token);  // Store JWT in localStorage
-      alert('Login successful');
+      // console.log(response.data);
+      // console.log(response.status);
+      const { token, role } = response.data;
+      localStorage.setItem('token', token);
+      if (role === 'user') {
+        navigate('/user/dashboard');
+      } else {
+        alert('Unauthorized role');
+      }
     } catch (error) {
       alert('Login failed');
     }
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl">Login</h2>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        className="block mb-2 p-2 border"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        className="block mb-2 p-2 border"
-      />
-      <button onClick={handleLogin} className="p-2 bg-green-500 text-white">
-        Login
-      </button>
-    </div>
+    <Container maxWidth="xs">
+      <CssBaseline />
+      <Box
+        sx={{
+          mt: 20,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Avatar sx={{ m: 1, bgcolor: "primary.light" }}>
+          <LockOutlined />
+        </Avatar>
+        <Typography variant="h5">Login</Typography>
+        <Box sx={{ mt: 1 }}>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoFocus
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="password"
+            name="password"
+            label="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+            onClick={handleLogin}
+          >
+            Login
+          </Button>
+          <Grid container justifyContent={"flex-end"}>
+            <Grid item>
+              <Link to="/register">Don't have an account? Register</Link>
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+    </Container>
   );
 };
 
